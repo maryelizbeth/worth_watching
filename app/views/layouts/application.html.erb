@@ -7,8 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">Worth|Watching</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%=link_to 'New Video', new_video_path %></li>
+          </ul>
+          <form class="navbar-search pull-right">
+              <input type="text" class="search-query" placeholder="Search">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="row">
+        <div class="span12 offset2">
+           <div class="alerts">
+              <p id="notice"><%= notice %></p>
+              <p id="alert"><%= alert %></p>
+            </div>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
